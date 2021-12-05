@@ -1,0 +1,68 @@
+1. sWAP cASE
+
+def swap_case(s):
+    Solution='';
+    for character in s:
+        if(character.isupper()==True):
+            Solution += (character.lower());
+        elif(character.islower()==True):
+            Solution += (character.upper());
+        else:       
+            Solution += character;
+    
+    return Solution
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+--------------------
+
+2. String Split and Join
+
+def split_and_join(line):
+    # write your code here
+    split_and_join=line.split(" ")
+    split_and_join="-".join(split_and_join)
+    return split_and_join
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+--------------------
+
+3. What's your name?
+
+# Complete the 'print_full_name' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. STRING first
+#  2. STRING last
+#
+
+def print_full_name(first, last):
+    # Write your code here
+    print("Hello {} {}! You just delved into python.".format(first_name, last_name))
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+--------------------
+
+4. Mutations
+
+def mutate_string(string, position, character):
+    l=list(string)
+    l[position]=character;
+    string=''.join(l);
+
+    return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+--------------------

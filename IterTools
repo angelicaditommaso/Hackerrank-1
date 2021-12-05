@@ -1,0 +1,57 @@
+1. itertools.product()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+
+#result
+print (*product(a,b))
+
+-----------------
+
+2. itertools.permutations()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import permutations
+
+s,k= input().split(' ')
+
+#print list (permutations (s, k))    
+permutations= list(permutations(s,int(k)))
+
+permutations.sort()
+
+for i in permutations:
+    print("".join(i))    
+
+--------------------
+
+3. itertools.combinations()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import combinations
+
+s,k= input().split(' ')
+
+
+for j in range(1, int(k)+1):
+    for i in combinations(sorted(s),j):
+        print("".join(i))
+    
+-------------------
+
+4. itertools.combinations_with_replacement()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import combinations_with_replacement
+
+s,k= input().split(' ')
+
+comb= list(combinations_with_replacement(sorted(s),int(k)))
+
+for i in comb:
+    print("".join(i))

@@ -1,0 +1,65 @@
+1. Introduction to Sets
+
+def average(array):
+    # your code goes here
+    array=set(array)
+    return sum(array)/len(array)
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+------------
+
+2. No Idea!
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+# integers n and m separated by space
+n , m =(int(i)for i in input().split())
+# n integers, elements of array
+arr= list(map(int, input().split()))
+# m integers, A and B respectively
+A= set(map(int, input().split()))
+B= set(map(int, input().split()))
+# if i in A, happiness +1
+# if i in B , happiness -1
+happiness= 0
+for x in arr:
+    if x in A:
+        happiness+=1
+    elif x in B:
+        happiness-=1
+print(happiness)            
+
+------------
+
+3. Symmetric Difference
+
+M= int(input())
+mset= set(map(int, input().split()))
+N= int(input())
+nset=set(map(int, input().split()))
+mdif=mset.difference(nset)
+ndif=nset.difference(mset)
+output=mdif.union(ndif)
+for i in sorted(list(output)):
+    print(i)
+
+
+
+#diff_of_a = a.difference(b)
+#diff_of_b= b.difference(a)
+
+-----------
+
+4. Set .add()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n=int(input())
+set1=set()
+for i in range(n):
+    set1.add(input())
+print(len(set1))
+    

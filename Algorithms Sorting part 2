@@ -1,0 +1,228 @@
+6. Quicksort 1 
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'quickSort' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def quickSort(arr):
+    # Write your code here
+    left  = []
+    equal = []
+    right = []
+    pivot = arr[0]
+    
+    for i in arr:
+        if i == pivot:
+            equal.append(i)
+        elif i < pivot:
+            left.append(i)
+        elif i > pivot: 
+            right.append(i)
+    return left+equal+right              
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = quickSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+----------------------------------------------
+7. Counting Sort 1
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'countingSort' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def countingSort(arr):
+    # Write your code here
+    
+    result=[0]*100
+    
+    for i in range(0, len(arr)):
+        result[arr[i]] += 1
+    return result
+    
+ 
+            
+        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+--------------------------------------------
+8. Counting Sort 2
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'countingSort' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def countingSort(arr):
+    # Write your code here
+    
+    result = [0]*100
+    for n in arr:
+        result[n] += 1
+    
+    answer=[]
+    for i in range(len(result)):
+        while result[i] != 0:
+            result[i] -= 1
+            answer.append(i)
+    return answer        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+---------------------------------------------
+9. Closest Numbers
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'closestNumbers' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def closestNumbers(arr):
+    # Write your code here
+    pairs=[]
+    arr = sorted(arr)
+    minimumdiff=9999999999
+    
+    
+       
+    for i in range(len(arr)-1):
+        x1= arr[i]
+        x2= arr[i+1]
+    
+        if x2-x1<minimumdiff:
+            pairs=[]  
+            minimumdiff= x2-x1
+        if x2-x1 <= minimumdiff:
+            pairs.append(x1)
+            pairs.append(x2)
+    return pairs            
+            
+       
+               
+                
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = closestNumbers(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+------------------------------------------
+10. Find the Median
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'findMedian' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def findMedian(arr):
+    # Write your code here
+    array=sorted(arr)
+    len(arr)%2 != 0
+    median=(len(arr)//2)
+    return(array[median])
+        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = findMedian(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

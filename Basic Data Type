@@ -1,4 +1,25 @@
-Find the Runner-Up Score
+1. List comprehensions
+
+
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+    a =[]
+    
+    for i in range (x+1):
+        for j in range (y+1): 
+            for k in range (z+1):
+                if i+j+k != n:  
+                    a.append([i,j,k])  
+    print (a)
+                
+
+----------------------------------------------------
+
+2. Find the Runner-Up Score
 
 if __name__ == '__main__':
     n = int(input())
@@ -11,3 +32,86 @@ if __name__ == '__main__':
         arr.remove(max(arr))
     print(max(arr))    
     
+----------------------------------------------------------
+
+3. Nested Lists
+
+if __name__ == '__main__':
+    
+    list1=[]
+    sheet=[]
+   
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        
+        records=[name, score]
+        sheet.append(records)
+        list1.append(score)
+      
+sheet.sort()
+
+second_lower_score= sorted(set(list1))[1]
+
+for name,score in sheet:
+    if score == second_lower_score:
+        print(name)
+
+-------------------------------------------------------
+
+4. Finding the percentage
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    
+    
+    score=student_marks[query_name]
+    value=(sum(score)/3)
+    
+    
+    x= '%.2f'% value
+    print(x)
+    
+  --------------------------------------------------
+  
+ 5. Lists
+  
+  if __name__ == '__main__':
+    N = int(input())
+    
+    list=[]
+    for i in range(0,N):
+        command= input().split()
+        
+        if command[0]== "insert":
+            list.insert(int(command[1]), int(command[2]))
+            
+        elif command[0] == "print":
+            print(list)
+            
+        elif command[0] == "remove":
+            list.remove(int(command[1]))
+            
+        elif command[0] == "append":
+            list.append(int(command[1]))
+            
+        elif command[0] == "sort":
+            list.sort();
+            
+        elif command[0] == "pop":
+            list.pop(); 
+            
+        else:
+            list.reverse();
+                       
+                    
+    # list.insert(index, value)
+    
+    
+

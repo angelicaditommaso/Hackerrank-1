@@ -1,0 +1,88 @@
+1. collections.Counter()
+
+from collections import Counter
+
+x=int(input())
+shoe_size=Counter(map(int,input().split()))
+n=int(input())
+total=[]
+
+for i in range(n):
+    size,price= map(int,input().split())
+    if shoe_size [size]>0:
+        total.append(price)
+        shoe_size[size]-=1
+print(sum(total))
+
+
+#money_earned=sum(customers)
+---------------------
+
+2. DefaultDict Tutorial
+
+from collections import defaultdict
+
+n,m =map(int, input().split())
+
+d= defaultdict(list)
+
+A=[input()for i in range(n)]
+B=[input() for i in range (m)]      
+
+for i in range(n):
+    d[A[i]].append(str(i+1))
+    
+for i in B:
+    if i in A:
+        print(' '.join(d[i]))
+    else:
+        print(-1)    
+
+---------------------
+
+3. Collections.namedtuple()
+
+from collections import namedtuple
+
+
+n=int(input())
+
+Student= namedtuple('Student', input().split())
+
+data=[Student(*input().split())for i in range(n)]
+
+average= sum(int(s.MARKS)for s in data)/n
+print("{:.2f}".format(average)) 
+
+#IDs
+#Marks
+#Name
+#Class
+
+## average=print((sum(Marks)/n))
+## 2 decimal places = "{:.2f}".format(average)
+
+---------------------
+
+4. Collections.OrderedDict()
+
+from collections import OrderedDict
+
+n=int (input())
+d=OrderedDict()
+
+#item_name
+#net_price
+
+for i in range(n):
+    item_name,_,price = input().rpartition(" ")
+    price=int(price)
+    if item_name in d.keys():
+        d[item_name]= d[item_name]+(price)
+    else:
+        d[item_name]=(price)
+for item_name,net_price in d.items():
+    print(item_name,net_price)            
+
+# space _
+

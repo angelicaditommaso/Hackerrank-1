@@ -1,0 +1,61 @@
+1. Polar Coordinates
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+z=complex(input())
+
+#angle(modulus)
+modulus= abs(z)
+#distance from origin 
+phase= cmath.phase(z)
+print(modulus)
+print(phase)
+
+-----------------------------
+
+2. Find angle MBC
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+ab= int(input())
+bc= int(input())
+
+#Hypotenuse
+ac= math.sqrt((ab*ab)+(bc*bc))
+bm=ac/2
+mc=bm
+
+radiant_angle= math.acos(bc/(2*mc))
+degree_angle=int(round((180*radiant_angle)/math.pi))
+#degree symbol
+degree=chr(176)
+angle= str(degree_angle)
+print(angle,degree, sep='')
+
+--------------------------
+
+3. Mod Divmod
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a=int(input())
+b=int(input())
+division= a//b
+print(division)
+modulo= a%b
+print(modulo)
+div_mod= divmod(a,b)
+print(div_mod)
+
+--------------------
+
+4. Power-Mod Power
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a=int(input())
+b=int(input())
+m=int(input())
+first_result= pow(a,b)
+print(first_result)
+second_result=pow(a,b,m)
+print(second_result)
+
